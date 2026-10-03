@@ -1,0 +1,344 @@
+/* PALASH IRIS - Vibrant Institutional Theme with Modular Blocks & Crisp Contrast */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root {
+  /* Warm, Bright Institutional Backgrounds - NO DULL GREYS */
+  --bg-main: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #FFF7ED;
+  --bg-hover: #FEF3C7;
+  --bg-warm-tint: #FFFDF9;
+  
+  /* Crisp Colorful Borders with High Contrast */
+  --border-light: #FDE68A;
+  --border-medium: #FDBA74;
+  --border-dark: #EA580C;
+  --border-accent: #C2410C;
+  --border-blue: #BFDBFE;
+  --border-green: #BBF7D0;
+  
+  /* Rich, High-Contrast Typography */
+  --text-main: #0F172A;
+  --text-muted: #334155;
+  --text-faint: #64748B;
+  
+  /* Vibrant Semantic Accents */
+  --accent: #EA580C;
+  --accent-hover: #C2410C;
+  --accent-light: #FFF7ED;
+  --accent-border: #FDBA74;
+  --accent-glow: rgba(234, 88, 12, 0.15);
+
+  --secondary-accent: #059669;
+  --secondary-hover: #047857;
+  --secondary-light: #ECFDF5;
+  --secondary-border: #A7F3D0;
+
+  --blue-accent: #2563EB;
+  --blue-light: #EFF6FF;
+  --blue-border: #BFDBFE;
+
+  --amber-accent: #D97706;
+  --amber-light: #FEF3C7;
+  --amber-border: #FDE68A;
+
+  --purple-accent: #7C3AED;
+  --purple-light: #F5F3FF;
+  --purple-border: #DDD6FE;
+  
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --shadow-sm: 0 1px 3px 0 rgba(234, 88, 12, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 10px -2px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(234, 88, 12, 0.06);
+  --shadow-lg: 0 12px 20px -4px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(234, 88, 12, 0.08);
+
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF7ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #FDBA74;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EA580C;
+}
+
+/* Base Utility Layouts */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+/* Crisp Vibrant Card Styling */
+.card {
+  background-color: var(--bg-card);
+  border: 1.5px solid #FED7AA;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+/* Highlighted Accent Card */
+.card-highlight {
+  border: 2px solid var(--accent);
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+/* Section Header styling */
+.section-header {
+  border-bottom: 2px solid #FED7AA;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+/* Modular Navbar Component Classes */
+.nav-modular-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-block {
+  background-color: #FFFFFF;
+  border: 1.5px solid #FED7AA;
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  box-shadow: 0 1px 3px rgba(234, 88, 12, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-tab-block {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1.5px solid transparent;
+}
+
+.nav-tab-block.active {
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+  color: #FFFFFF;
+  border-color: #9A3412;
+  box-shadow: 0 3px 8px rgba(234, 88, 12, 0.35);
+}
+
+.nav-tab-block:not(.active) {
+  background-color: #FFFFFF;
+  color: #334155;
+  border-color: #FED7AA;
+}
+
+.nav-tab-block:not(.active):hover {
+  background-color: #FFF7ED;
+  color: #EA580C;
+  border-color: #EA580C;
+}
+
+/* Status Indicator Pulse */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   TABLET-FIRST RESPONSIVE LAYOUT (≤1024px + ≤768px)
+   Target: School tablets, iPad Air/Pro, Android tabs
+═══════════════════════════════════════════════════ */
+
+/* iPad Landscape & small laptops ≤1024px */
+@media (max-width: 1024px) {
+  header > div:first-child {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  header nav {
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+  }
+  .nav-tab-block {
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+  /* Voice engine two-col → single col */
+  .voice-engine-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* NCERT section sidebar → full width */
+  .ncert-main-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Dashboard metrics 4→2 cols */
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* FLN studio side panel → full width */
+  .fln-studio-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Inner container horizontal padding */
+  .page-container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* iPad Portrait & small Android tablets ≤768px */
+@media (max-width: 768px) {
+  /* Navbar top sub-bar stack */
+  header > div:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 8px 14px !important;
+    gap: 8px !important;
+  }
+  header > div:first-child > div:last-child {
+    flex-wrap: wrap;
+  }
+  /* Nav main bar: brand + nav stack */
+  header > div:last-child,
+  header > div:nth-child(2) {
+    flex-wrap: wrap;
+    gap: 8px !important;
+    padding: 8px 14px !important;
+  }
+  .nav-tab-block {
+    padding: 5px 8px !important;
+    font-size: 10px !important;
+    gap: 3px !important;
+  }
+  /* Cards */
+  .card {
+    padding: 14px !important;
+    border-radius: 10px !important;
+  }
+  /* Main content bottom padding (for nav bar on tablets) */
+  .main-content {
+    padding-bottom: 70px;
+  }
+  /* Generic flex rows that row-wrap */
+  .flex-row-wrap {
+    flex-wrap: wrap !important;
+  }
+  /* Footer stacks */
+  footer > div > div {
+    flex-direction: column !important;
+    gap: 6px !important;
+    text-align: center !important;
+  }
+  /* Section padding reduction */
+  .section-pad {
+    padding: 14px 14px !important;
+  }
+}
+
+/* Touch-friendly interactive targets on tablets */
+@media (pointer: coarse) {
+  button, select, input[type="text"], textarea {
+    min-height: 40px;
+  }
+  .nav-tab-block {
+    min-height: 38px !important;
+    padding: 6px 12px !important;
+  }
+  select {
+    font-size: 14px !important;
+  }
+}
+
+/* Print Optimization for Worksheets */
+@media print {
+  header, nav, .no-print, button {
+    display: none !important;
+  }
+  body, .main-content, .app-container {
+    background-color: #FFFFFF !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .print-only-area {
+    display: block !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 10mm !important;
+  }
+}
+
